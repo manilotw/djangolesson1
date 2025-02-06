@@ -11,3 +11,14 @@ class Location(models.Model):
 
     def __str__(self):
         return self.title
+    
+class Image(models.Model):
+    location = models.ForeignKey(Location, on_delete=models.CASCADE, related_name='photos')
+    number = models.IntegerField('Номер для порядка')
+    image = models.ImageField('Фотография')
+
+    def __str__(self):
+        return f"{self.number}, {self.location.title}"
+
+
+
