@@ -4,12 +4,7 @@ from catalog.models import Location
 
 
 
+from django.shortcuts import render
+
 def show_map(request):
-
-    template = loader.get_template('index.html')
-  
-    context = {}
-
-    rendered_page = template.render(context, request)
-
-    return HttpResponse(rendered_page)
+    return render(request, "index.html")
