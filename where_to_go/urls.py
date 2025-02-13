@@ -15,12 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from catalog.views import show_map
+from catalog.views import show_map, place
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', show_map),
-    path('place/<int:place_id>', show_map, name='show_map_id')
+    path('places/<int:place_id>', place, name='get_place')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
