@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from catalog.models import Location
 from django.http import HttpResponse, JsonResponse
 from where_to_go import settings
+from django.urls import reverse
 
 def show_map(request):
 
@@ -21,7 +22,10 @@ def show_map(request):
                 "properties": {
                     "title": location.title,
                     "placeId": location.id,
-                    "detailsUrl": "/static/places/moscow_legends.json"
+                    "detailsUrl": reverse(
+                                        'get_place',
+                                        kwargs={'place_id': location.id}
+                                                )
                 }
             }
         features.append(feature)
@@ -53,7 +57,7 @@ def place(request, place_id):
     }
 }
     for img in location.img.all():
-        place['imgs'].append(settings.MEDIA_ROOT + str(img.image.path))
-    # place = json.dumps(place, ensure_ascii=False)
+        place['imgs'].append(str(img.image.url))
+
 
     return JsonResponse(place, safe=False, json_dumps_params={'indent': 2, 'ensure_ascii': False})
