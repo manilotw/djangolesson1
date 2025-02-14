@@ -26,5 +26,4 @@ class LocationAdmin(admin.ModelAdmin):
         ImageInline,
     ]
 
-
 admin.site.register(Image)
