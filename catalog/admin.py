@@ -1,16 +1,19 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
-
+from adminsortable2.admin import SortableInlineAdminMixin, SortableAdminMixin
 # Register your models here.
 
 from .models import Location, Image
 
-class ImageInline(admin.TabularInline):
+class ImageInline(SortableInlineAdminMixin, admin.TabularInline):
     model = Image
 
-    readonly_fields = ["image"]
-
     readonly_fields = ["image_preview"]
+    extra = 1
+    # list_display = ["location", "image_preview"]
+    fields = ['image', 'location', 'image_preview', 'number']
+    ordering = ['number']
+    sortable_field_name = 'number'
 
     def image_preview(self, obj):
         if obj.image:
