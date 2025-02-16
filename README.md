@@ -37,7 +37,6 @@ pip3 install -r requirements.txt
 ## Запуск
 ### Создание базы данных 
 ```bush
-python3 manage.py makemigrations
 python3 manage.py migrate
 ```
 ### Создание суперпользователя
