@@ -9,5 +9,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', show_map),
     path('tinymce/', include('tinymce.urls')),
-    path('places/<int:place_id>', place, name='get_place')
+    path('places/<int:place_id>/', place, name='get_place')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
