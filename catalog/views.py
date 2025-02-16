@@ -9,37 +9,28 @@ def show_map(request):
 
     locations = Location.objects.all()
 
-    features = []
-
-    for location in locations:
-
-        feature = {
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [location.lng, location.lat]
-                },
-                "properties": {
-                    "title": location.title,
-                    "placeId": location.id,
-                    "detailsUrl": reverse(
-                                        'get_place',
-                                        kwargs={'place_id': location.id}
-                                                )
-                }
+    features = [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [location.lng, location.lat]
+            },
+            "properties": {
+                "title": location.title,
+                "placeId": location.id,
+                "detailsUrl": reverse('get_place', kwargs={'place_id': location.id})
             }
-        features.append(feature)
-    
+        }
+        for location in locations
+    ]
+
     locations_geojson = {
         "type": "FeatureCollection",
         "features": features
     }
 
-    context = {
-        'locations_json': json.dumps(locations_geojson)
-    }
-
-    return render(request, "index.html", context)
+    return JsonResponse(locations_geojson, json_dumps_params={"ensure_ascii": False, "indent": 2})
 
 
 def place(request, place_id):
