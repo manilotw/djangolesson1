@@ -12,7 +12,7 @@ class Location(models.Model):
         return self.title
     
 class Image(models.Model):
-    location = models.ForeignKey(Location,default=0, on_delete=models.CASCADE, related_name='img')
+    location = models.ForeignKey(Location,default=0, on_delete=models.CASCADE, related_name='imgs')
     number = models.IntegerField('Номер для порядка', default=0, blank=True)
     image = models.ImageField('Фотография')
 

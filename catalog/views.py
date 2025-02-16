@@ -42,7 +42,7 @@ def place(request, place_id):
 
     place = {
         "title": location.title,
-        "imgs": [str(img.image.url) for img in location.img.all()],
+        "imgs": [str(img.image.url) for img in location.imgs.all()],
         "description_short": location.short_description,
         "description_long": location.long_description,
         "coordinates": {
