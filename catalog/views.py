@@ -1,9 +1,11 @@
 import json
+
 from django.shortcuts import render, get_object_or_404
-from catalog.models import Location
 from django.http import HttpResponse, JsonResponse
-from where_to_go import settings
 from django.urls import reverse
+
+from where_to_go import settings
+from catalog.models import Location
 
 def show_map(request):
 
