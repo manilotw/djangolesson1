@@ -5,8 +5,6 @@ from catalog.models import Image, Location
 import os
 import requests
 
-
-
 class Command(BaseCommand):
     help = 'Загрузка данных с JSON'
 
