@@ -47,6 +47,11 @@ python manage.py createsuperuser
 ```bush
 python manage.py runserver
 ```
-## Цели проекта
+### Добавление локаций
 
-Код написан в учебных целях — это урок в курсе по Python и веб-разработке на сайте [Devman](https://dvmn.org).
+Если у вас есть локаций на подобий из примера JSON файла (см.выше), его можно добавить:
+```
+python manage.py load_places https://ссылка_на_json
+```
+
+Прописав данную команду она добавится в вашу БД
