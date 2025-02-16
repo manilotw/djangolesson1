@@ -41,8 +41,8 @@ class Command(BaseCommand):
             lat=lat,
             lng=lng,
             defaults={
-                "description_short": description_short,
-                "description_long": description_long,
+                "short_description": description_short,
+                "long_description": description_long,
             },
         )
 
