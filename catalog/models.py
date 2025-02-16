@@ -5,8 +5,8 @@ class Location(models.Model):
     title = models.CharField('Название локаций', max_length=200)
     description_short = models.TextField('Короткое описание')
     description_long = HTMLField('Длинное описание')
-    lat = models.FloatField('Координация 1')
-    lng = models.FloatField('Координация 2')
+    lat = models.FloatField('Широта')
+    lng = models.FloatField('Долгота')
 
     def __str__(self):
         return self.title
