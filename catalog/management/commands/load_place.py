@@ -11,7 +11,11 @@ class Command(BaseCommand):
     help = "Загрузка данных с JSON"
 
     def add_arguments(self, parser):
-        parser.add_argument("data_url", type=str, help="Введите ссылку на JSON")
+        parser.add_argument(
+            "data_url",
+            type=str,
+            help="Введите ссылку на JSON"
+        )
 
     def handle(self, *args, **kwargs):
         def upload_image(place, image_url):

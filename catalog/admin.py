@@ -26,10 +26,13 @@ class LocationAdmin(admin.ModelAdmin):
 
 @admin.register(Image)
 class ImageAdmin(admin.ModelAdmin):
-    list_display = ["id", "image_preview", "location"]
+    list_display = ["id",
+                    "image_preview",
+                    "location"]
+    
     search_fields = ["location__title"]
     list_filter = ["location"]
-    raw_id_fields = ["location"]  # Оптимизация выбора локации при большом количестве данных
+    raw_id_fields = ["location"]  
 
     def image_preview(self, obj):
         if obj.image:

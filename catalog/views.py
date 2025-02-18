@@ -51,4 +51,11 @@ def place(request, place_id):
         },
     }
 
-    return JsonResponse(place, safe=False, json_dumps_params={"indent": 2, "ensure_ascii": False})
+    return JsonResponse(
+        place,
+        safe=False,
+        json_dumps_params={
+            "indent": 2,
+            "ensure_ascii": False
+        },
+    )
