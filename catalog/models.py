@@ -25,7 +25,7 @@ class Image(models.Model):
         related_name='imgs', db_index=True
     )
     number = models.IntegerField(
-        'Номер для порядка', default=0, blank=True
+        'Номер для порядка', default=0, blank=True, db_index=True
     )
     image = models.ImageField('Фотография')
 
