@@ -21,11 +21,11 @@ class Location(models.Model):
 
 class Image(models.Model):
     location = models.ForeignKey(
-        Location, default=0, on_delete=models.CASCADE,
-        related_name='imgs', db_index=True
+        Location, default=0, on_delete=models.CASCADE, related_name='imgs',
     )
     number = models.IntegerField(
-        'Номер для порядка', default=0, blank=True, db_index=True
+        'Номер для порядка', default=0,
+        blank=True, db_index=True
     )
     image = models.ImageField('Фотография')
 
