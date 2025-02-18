@@ -165,3 +165,6 @@ books/
 myenv/
 media/
 .editorconfig
+
+static/README.md
+static/SUMMARY.md
