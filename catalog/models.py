@@ -7,10 +7,10 @@ class Location(models.Model):
         'Название локаций', max_length=200
     )
     short_description = models.TextField(
-        'Короткое описание', null=True, blank=True
+        'Короткое описание', blank=True
     )
     long_description = HTMLField(
-        'Длинное описание', null=True, blank=True
+        'Длинное описание', blank=True
     )
     lat = models.FloatField('Широта')
     lng = models.FloatField('Долгота')
