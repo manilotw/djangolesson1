@@ -31,10 +31,7 @@ def show_map(request):
         "features": features,
     }
 
-    return JsonResponse(
-        locations_geojson,
-        json_dumps_params={"ensure_ascii": False, "indent": 2},
-    )
+    return render(request, "index.html", locations_geojson)
 
 
 def place(request, place_id):
