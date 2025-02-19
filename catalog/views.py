@@ -31,7 +31,7 @@ def show_map(request):
         "features": features,
     }
 
-    return render(request, "index.html", locations_geojson)
+    return render(request, "index.html", {"locations_geojson": locations_geojson})
 
 
 def place(request, place_id):
