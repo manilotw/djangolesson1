@@ -38,7 +38,7 @@ def show_map(request):
 
 
 def place(request, place_id):
-    location = get_object_or_404(Location.objects.select_related('imgs'), id=place_id)
+    location = get_object_or_404(Location.objects.prefetch_related('imgs'), id=place_id)
 
     place = {
         "title": location.title,
