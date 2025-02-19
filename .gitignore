@@ -168,3 +168,5 @@ media/
 
 static/README.md
 static/SUMMARY.md
+static/admin
+static/.gitbook
