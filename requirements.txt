@@ -1,4 +1,4 @@
-django==3.7
+django==3.2
 Pillow==9.5.0
 django-extensions==0.9
 geojson==3.0.1
