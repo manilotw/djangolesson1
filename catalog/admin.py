@@ -20,7 +20,7 @@ class ImageInline(SortableInlineAdminMixin, admin.TabularInline):
 
 
 @admin.register(Location)
-class LocationAdmin(admin.ModelAdmin):
+class LocationAdmin(SortableAdminBase, admin.ModelAdmin):
     inlines = [ImageInline]
 
 
